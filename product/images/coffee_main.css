@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+body{
+    background-color:rgba(0, 0, 0,0.9) ;
+    font-family: 'Kaushan Script', cursive;
+    color: antiquewhite;
+}
+#Container_1{
+    background-image: url('Coffee.png');
+    width: 100%;
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#Coffee_heading{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    font-family: 'Kaushan Script', cursive;
+    color: antiquewhite;
+    font-size: 60px;
+    margin-left: 60px;
+}
+#Coffee_quotes{
+    font-family: 'Kaushan Script', cursive;
+    color: antiquewhite;
+    margin-top: 10%;
+    margin-left: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+#Coffee_quotes button{
+    background-color: black;
+    border-radius: 40px;
+    border: none;
+    font-family: 'Kaushan Script', cursive;
+    font-size: medium;
+    color: antiquewhite;
+    width: 100px;
+    height: 50px;
+}
+
+
+
+#Container_2,#Container_3,#Container_4,#Container_5{
+    /* background-color: rgba(0, 0, 0,0.9); */
+    font-family: 'Kaushan Script', cursive;
+    color: antiquewhite;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+#Container_2 .row{
+    padding: 5%;
+}
+.TitleH1{
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+    color: antiquewhite;
+    padding-bottom: 10px;
+}
+
+
+#AboutUs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center;
+    padding: 5%;
+    text-align: center;
+}
+
+
+#Container_4{
+    position: relative;
+}
+
+#WeAreIn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.WeAreInC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Container_41{
+    position: absolute;
+    left: 70px;
+    top:70px;
+    z-index: 2;
+    background-color: transparent;
+}
+#Circlerow{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#SocialMedia,#feedbackForm,#feedbackForm form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+#SocialMedia a{
+    color: antiquewhite;
+    text-decoration: none;
+}
+#feedbackForm input{
+    display: block;
+margin-bottom: 20px;
+background-color: black;
+color: antiquewhite;
+border: none;
+text-align: center;
+padding: 10px;
+border-radius: 40px;
+}

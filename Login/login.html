@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginPage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+    body {
+        font-family: 'Kaushan Script', cursive;
+        color: antiquewhite;
+        background-image: url("bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #Login{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    #Loginpage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.525);
+        border-radius:20px;
+        padding: 10px;
+    }
+    #Loginpage input{
+        margin-bottom: 20px;
+        background-color: black;
+        color: antiquewhite;
+        border-radius: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+    .TitleH1{
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+    color:black;
+    padding-bottom: 10px;
+}
+</style>
+
+<body>
+
+    <div class="container" id="Login">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" id="Loginpage">
+                <h1 class="TitleH1"><a href="../Homepage/coffee_main.html" style="cursor: pointer; text-decoration: none; color: black;">Coffee Time</a></h1>
+                <form action="" id="Loginpage" style="background-color: transparent;">
+                    <input type="email" placeholder="Enter your email-ID:" id="email" value="">
+                    <input type="text" placeholder="Enter your password:" id="pd" value="">
+                    <a href="../profile/profile.html" style="text-decoration: none;"><input type="button" value="Login" id="login"></a>
+                    <p style="color: black;">Forget the password ??? To reset your password enter your registred mail Id</p>
+                    <input type="email" placeholder="Enter your email-ID:" id="email_id">
+                    <input type="button" value="send" id="send">
+                    <p id="sucess" style="display: none;color:black">Link has send to your mail id</p>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <script>
+        var send=document.querySelector('#send');
+        var su=document.querySelector('#sucess');
+        send.addEventListener('click',()=>{
+            var x=document.querySelector('#email_id');
+            // var su=document.querySelector('#sucess');
+            send.style.display='none';
+            x.style.display='none';
+            su.style.display='block';
+        });
+
+
+        var login=document.querySelector('#login');
+        login.addEventListener("click",function(){
+            console.log("welcome");
+            let x=document.querySelector('#email').value;
+            let y=document.querySelector('#pd').value;
+            if(x.length>0 && y.length>0)
+            {
+                su.textContent="Succesfully Logged in";
+                su.style.display='block';
+            }
+                });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

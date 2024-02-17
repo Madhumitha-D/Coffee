@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateAccount</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+    body {
+        font-family: 'Kaushan Script', cursive;
+        color: antiquewhite;
+        background-image: url("bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #Login{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    #Loginpage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.525);
+        border-radius:20px;
+        padding: 10px;
+    }
+    #Loginpage input{
+        margin-bottom: 20px;
+        background-color: black;
+        color: antiquewhite;
+        border-radius: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+    .TitleH1{
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+    color:black;
+    padding-bottom: 10px;
+}
+</style>
+
+<body>
+
+    <div class="container" id="Login">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" id="Loginpage">
+                <h1 class="TitleH1"><a href="../Homepage/coffee_main.html" style="cursor: pointer; text-decoration: none; color: antiquewhite;">Coffee Time</a></h1>
+                <form action="" id="Loginpage" style="background-color: transparent;">
+                    <input type="text" placeholder="Enter your name:" value="" id="name">
+                    <input type="email" placeholder="Enter your email-ID:" value="" id="email">
+                    <input type="text" maxlength="10" placeholder="Enter your number:" value="" id="number">
+                    <input type="text" placeholder="Enter your address:" value="" id="address">
+                    <input type="text" placeholder="Enter your password:" value="" id="password">
+                    <input type="text" placeholder="Re-Enter your password to conform:"  value="" id="confirmpassword">
+                   <span><input type="checkbox" id="terms" name="terms" value="terms" required>
+                    <label for="terms" style="color: black;"> Agree to the teams and conditions</label><br></span> 
+                    <input type="button" value="Create Account"  id="CreatedButton"/>
+                    <label style="color:black">Or</label>
+                    <label style="color:black">Already have a account</label>
+                    <a href="../Login/login.html"><input type="button" value="yes" onclick="AlreadyHaveAccount()"></a>
+                    <p id="text" style="display: block;color:black;"></p>
+                </form>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var x=document.querySelector('#CreatedButton');
+        var details=new Array();
+
+        x.addEventListener('click',()=>{
+           details.push(document.querySelector('#name').value);
+           details.push(document.querySelector('#email').value);
+           details.push(document.querySelector('#number').value);
+           details.push(document.querySelector('#address').value);
+           let a=(document.querySelector('#password').value);
+           let b=(document.querySelector('#confirmpassword').value);
+
+        //    localStorage.setItem("details", JSON.stringify(details));
+           if(a===b)
+           {localStorage.setItem("details", JSON.stringify(details));
+           let text=document.querySelector('#text');
+            text.style.display='block';
+            text.innerHTML='Successfully created';
+            setTimeout(function(){location.href="../profile/profile.html", 1000} );  
+        }
+           else{
+            let text=document.querySelector('#text');
+            text.style.display='block';
+            text.innerHTML='Password does not match!';
+           }
+        });
+
+        
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check out</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body style="background-color:rgba(0,0,0,0.9);">
+
+     <!-- container-1 -->
+     <div class="container-fluid" id="Container_1">
+        <div id="Coffee_heading">
+            <span><a href="../Homepage/coffee_main.html" style="cursor: pointer; text-decoration: none; color: antiquewhite;">Coffee Time</a></span>
+            <a href="../CreateAccount/CreateAccount.html"><img src="images/person.png" alt="" width="70px" height="70px"></a>
+        </div>
+
+        <div id="Coffee_quotes">
+            <p>"Coffee is a language in itself."</p>
+            <a href="../product/product.html"><button>Order Now</button></a>
+        </div>
+    </div>
+
+    <div class="container"  id="out">
+        <h1 class="TitleH1">Your Cart</h1>
+
+    </div>
+
+
+    <div class="container-fluid" id="Social">
+        <h1 id="Total"></h1>
+        <div class="row">
+            <div class="col-md-3">
+                <h1 class="TitleH1">Coffee Time</h1>
+                <h3 class="TitleH1">Contact us</h3>
+            </div>
+            <div class="col-md-3" >                
+                    <div><a href="https://www.facebook.com/login/"><img src="images/fb.png" alt="" width="50px"> Coffee_Time</a></div>
+            </div>
+            <div class="col-md-3">
+                <div><a href="https://www.instagram.com/"><img src="images/insta.png" alt="" width="50px"> Coffee_Time</a></div>
+            </div>
+            <div class="col-md-3">
+                <div><a href="https://mail.google.com/mail/u/0/#inbox"><img src="images/gmail.png" alt="" width="50px"> Coffeetime@gmail.com</a></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <img src="images/last.jpg" alt="" width="100%">
+    </div>
+    
+    <script>
+       var x=JSON.parse(localStorage.getItem("checkOut"));
+       var yy=JSON.parse(localStorage.getItem("quanity"));
+        var totalCost=0;
+    //    yy.forEach((value)=>{
+    //     console.log(value);
+    //    })
+
+    x.forEach((value,index)=>{
+
+        console.log(yy[index]);
+        var img=document.createElement('img');
+        img.src=value;
+        img.style.width='30%';
+        img.style.borderRadius='20px';
+        img.style.display='block';
+
+        var div=document.createElement('div');
+        div.setAttribute('class','row');
+        div.style.display='flex';
+        // div.style.flexDirection='column';
+        div.style.color=' antiquewhite';
+        div.style.justifyContent='center';
+        div.style.alignItems='center';
+
+        var div1=document.createElement('div');
+        div1.setAttribute('class','col-md-6');
+        div1.style.marginBottom='20px';
+        div1.style.display='flex';
+        // div.style.flexDirection='column';
+        div1.style.color=' antiquewhite';
+        div1.style.justifyContent='center';
+        div1.style.alignItems='center';
+
+        var div2=document.createElement('div');
+        div2.setAttribute('class','col-md-6');
+        div2.style.marginBottom='20px';
+        // div2.style.display='flex';
+        // // div.style.flexDirection='column';
+        // div2.style.color=' antiquewhite';
+        // div2.style.justifyContent='center';
+        // div2.style.alignItems='center';
+
+        var temp=document.createElement('div');
+        let total=yy[index]*250;
+        temp.innerHTML=`${yy[index]} * 250 is ${total}`; 
+
+
+        let y=document.querySelector('#out');
+
+        div1.appendChild(img);
+        div2.appendChild(temp);
+        div.appendChild(div1);
+        div.appendChild(div2);
+        y.appendChild(div);
+
+        totalCost=totalCost+total;
+
+        });
+
+        var total=document.querySelector('#Total');
+        total.innerHTML="Total Cost: "+totalCost;
+
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
